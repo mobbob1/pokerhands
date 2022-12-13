@@ -12,7 +12,7 @@ import java.util.Random;
 
 public class Deck {
 
-	// instance variables
+	// instance variables to access globally in the class
 	Card[] theDeck;
 	int topCard;
 
