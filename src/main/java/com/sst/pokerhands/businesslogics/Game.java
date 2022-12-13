@@ -26,39 +26,41 @@ public class Game {
 
 	// method to deal the deck
 	public void deal() {
-		System.out.println();
 		System.out.println("Here is your hand: ");
 		player.createHand();
 		player.sort();
 		System.out.println(player.showHand());
-		System.out.println();
 	}
 
 	// method to allow player to redraw
 	public void redraw() {
-		boolean redraw = false;
-		System.out.println("Replace first card? true/false");
-		redraw = input.nextBoolean();
-		if (redraw == true)
+		String redraw = "No";
+		System.out.println("Replace first card? Yes/No");
+                System.out.println("\n");
+		redraw = input.next();
+		if (redraw.equalsIgnoreCase("Yes"))
 			player.replaceFirstCard();
-		System.out.println("Replace second card? true/false");
-		redraw = input.nextBoolean();
-		if (redraw == true)
+		System.out.println("Replace second card? Yes/No");
+                  System.out.println("\n");
+		redraw = input.next();
+		if (redraw.equalsIgnoreCase("Yes"))
 			player.replaceSecondCard();
-		System.out.println("Replace third card? true/false");
-		redraw = input.nextBoolean();
-		if (redraw == true)
+		System.out.println("Replace third card? Yes/No");
+                  System.out.println("\n");
+		redraw = input.next();
+		if (redraw.equalsIgnoreCase("Yes"))
 			player.replaceThirdCard();
-		System.out.println("Replace fourth card? true/false");
-		redraw = input.nextBoolean();
-		if (redraw == true)
+		System.out.println("Replace fourth card? Yes/No");
+                  System.out.println("\n");
+		redraw = input.next();
+		if (redraw.equalsIgnoreCase("Yes"))
 			player.replaceFourthCard();
-		System.out.println("Replace fifth card? true/false");
-		redraw = input.nextBoolean();
-		if (redraw == true)
+		System.out.println("Replace fifth card? Yes/No");
+                  System.out.println("\n");
+		redraw = input.next();
+		if (redraw.equalsIgnoreCase("Yes"))
 			player.replaceFifthCard();
 		player.sort();
-		System.out.println();
 		System.out.println("Here is your new hand: ");
 		System.out.println(player.showHand());
 		System.out.println();
@@ -110,14 +112,13 @@ public class Game {
 	 //method to play a game
 	 //welcomes user, deals, allows redraws, evaluates, reports poker hand	
 	public void playGame() {
-		System.out.println();
-		System.out.println("======Welcome to Hand Poker Game===");
+		System.out.println("======Welcome to Octotel Hand Poker Game===");
 		do {
 			deal();
 			redraw();
 			System.out.println("You got " + evaluate() + "!");
 			System.out.println();
-			System.out.println("Play again? true/false");
+			System.out.println("Play again? Enter 'True' to continue / 'false' to stop the play");
 			keepPlaying = input.nextBoolean();
 		} while (keepPlaying == true);
 		System.out.println();
